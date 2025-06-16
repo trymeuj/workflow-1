@@ -34,22 +34,23 @@ export default function Home() {
 
     const formData = new FormData();
     formData.append('data', file);
-
+  
     try {
-      const response = await fetch('https://husainn8n.app.n8n.cloud/webhook/upload-invoice', {
-      //const response = await fetch('https://husainn8n.app.n8n.cloud/webhook-test/upload-invoice', {
+      const response = await fetch('https://aiva11.app.n8n.cloud/webhook/upload-invoice', {
+      //const response = await fetch('https://aiva11.app.n8n.cloud/webhook-test/upload-invoice', {
         method: 'POST',
         body: formData,
       });
 
       if (response.ok) {
-        alert('File sent!');
+        alert('File sent. You would receive a spreadsheet link in mail after completion of processing.');
         setFile(null);
         setUploadProgress(0);
       } else {
         alert('Error uploading file');
       }
     } catch (error) {
+      console.error('Upload error:', error);
       alert('Error uploading file');
     } finally {
       setUploading(false);
