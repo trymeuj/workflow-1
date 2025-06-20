@@ -36,7 +36,7 @@ export default function Home() {
     formData.append('data', file);
   
     try {
-      const response = await fetch('https://aiva11.app.n8n.cloud/webhook/upload-invoice', {
+      const response = await fetch('https://husainn8n.app.n8n.cloud/webhook/upload-invoice', {
       //const response = await fetch('https://aiva11.app.n8n.cloud/webhook-test/upload-invoice', {
         method: 'POST',
         body: formData,
